@@ -2,7 +2,7 @@
 import gsap from 'gsap'
 import Lenis from '@studio-freight/lenis'
 import SplitType from 'split-type'
-import ScrollTrigger from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted } from 'vue'
 // register the scrolltrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -16,20 +16,21 @@ function raf(time: number) {
 requestAnimationFrame(raf)
 
 onMounted(() => {
-  const splitTypes = gsap.utils.toArray('.reveal-type')
+  const splitTypes: object[] = gsap.utils.toArray('.reveal-type')
   splitTypes.forEach((char: any, i) => {
-    const text = new SplitType(char, { types: 'chars' })
-
+    const text = new SplitType(char, { types: 'chars, words' })
     gsap.from(text.chars, {
       scrollTrigger: {
         trigger: char,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: true
-        // markers: true,
+        start: '-80% center',
+        end: 'center center',
+        scrub: 1,
+        markers: true
       },
+      // y: 100,
       opacity: 0.2,
-      stagger: 0.01
+      stagger: 0.5,
+      ease: 'power4'
     })
   })
 })
@@ -37,6 +38,9 @@ onMounted(() => {
 
 <template>
   <main class="w-full h-auto flex flex-col justify-center place-items center place-items-center">
+    <div class="w-full h-screen flex justify-center place-items-center bg-white">
+      <h1 class="text-5xl font-black">Scroll slowly...</h1>
+    </div>
     <div class="w-full h-screen flex justify-center place-items-center bg-orange-800">
       <h1 class="reveal-type text-white font-black text-6xl w-[1400px]">
         This is a sample text that's about to be turned in to an awesome modern scroll text. Be
