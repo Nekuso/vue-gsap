@@ -4,23 +4,26 @@ import { onMounted } from 'vue'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const tl = gsap.timeline()
-
 onMounted(() => {
-  const boxes = gsap.utils.toArray('.box')
+  // Get all boxes
+  const boxes: object[] = gsap.utils.toArray('.box')
+  // Loop and apply scroll trigger to them
   boxes.forEach((box: any) => {
-    tl.to(box, {
+    gsap.to(box, {
       scrollTrigger: {
         trigger: box,
-        start: '-40% center',
-        end: 'center center',
+        start: 'top center',
+        end: 'bottom center',
         markers: true,
-        scrub: true
+        scrub: 1,
+        // toggleActions won't work if you enable scrub :>
+        toggleActions: 'play reverse play reverse'
       },
       x: '100%',
-      xPercent: 450,
-      duration: 6,
-      borderRadius: '10rem'
+      xPercent: 400,
+      rotate: 360,
+      borderRadius: '50%',
+      duration: .5
     })
   })
 })
