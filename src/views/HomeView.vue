@@ -20,17 +20,18 @@ onMounted(() => {
   splitTypes.forEach((char: any, i) => {
     const text = new SplitType(char, { types: 'chars, words' })
     gsap.from(text.chars, {
+      // y: 100,
+      opacity: 0.1,
+      stagger: 0.01,
+      // duration: 1,
       scrollTrigger: {
         trigger: char,
         start: '-80% center',
-        end: 'center center',
-        scrub: 1,
-        markers: true
-      },
-      // y: 100,
-      opacity: 0.2,
-      stagger: 0.5,
-      ease: 'power4'
+        end: 'start center',
+        scrub: true,
+        markers: true,
+        toggleActions: 'play reverse play reverse'
+      }
     })
   })
 })
@@ -42,25 +43,25 @@ onMounted(() => {
       <h1 class="text-5xl font-black">Scroll slowly...</h1>
     </div>
     <div class="w-full h-screen flex justify-center place-items-center bg-orange-800">
-      <h1 class="reveal-type text-white font-black text-6xl w-[1400px]">
+      <h1 class="reveal-type text-white font-black text-5xl w-[1200px]">
         This is a sample text that's about to be turned in to an awesome modern scroll text. Be
         amazed because it took a lot of coding fuckery to make this!
       </h1>
     </div>
     <div class="w-full h-screen flex justify-center place-items-center bg-blue-800">
-      <h1 class="reveal-type text-white font-black text-6xl w-[1400px]">
+      <h1 class="reveal-type text-white font-black text-5xl w-[1200px]">
         This is a sample text that's about to be turned in to an awesome modern scroll text. Be
         amazed because it took a lot of coding fuckery to make this!
       </h1>
     </div>
     <div class="w-full h-screen flex justify-center place-items-center bg-teal-800">
-      <h1 class="reveal-type text-white font-black text-6xl w-[1400px]">
+      <h1 class="reveal-type text-white font-black text-5xl w-[1200px]">
         This is a sample text that's about to be turned in to an awesome modern scroll text. Be
         amazed because it took a lot of coding fuckery to make this!
       </h1>
     </div>
     <div class="w-full h-screen flex justify-center place-items-center bg-purple-800">
-      <h1 class="reveal-type text-white font-black text-6xl w-[1400px]">
+      <h1 class="reveal-type text-white font-black text-5xl w-[1200px]">
         This is a sample text that's about to be turned in to an awesome modern scroll text. Be
         amazed because it took a lot of coding fuckery to make this!
       </h1>
