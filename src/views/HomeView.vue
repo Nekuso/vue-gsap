@@ -34,15 +34,17 @@ onMounted(() => {
     let text = section.querySelectorAll('.anim')
 
     gsap.from(text, {
-      y: -100,
+      y: 100,
       opacity: 0,
-      duration: 2,
+      duration: 1,
       ease: ' elastic',
       stagger: 0.1,
       scrollTrigger: {
         trigger: section,
         containerAnimation: scrollTween,
-        start: 'start center',
+        start: '30% center',
+        end: 'center center',
+        // scrub: 1,
         markers: true
       }
     })
