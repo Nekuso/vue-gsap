@@ -12,10 +12,8 @@ const tl = gsap.timeline()
       <div class="w-screen h-full bg-blue-700 flex-shrink-0"></div>
       <div class="w-screen h-full bg-teal-700 flex-shrink-0"></div>
       <div class="w-screen h-full bg-orange-700 flex-shrink-0"></div>
-      
     </div>
   </main>
 </template>
-
 
 <style></style>
