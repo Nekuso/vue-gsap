@@ -7,7 +7,7 @@ import { onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
 const lenis = new Lenis({
-  // duration: 1
+  duration: 2
 })
 function raf(time: number) {
   lenis.raf(time)
@@ -25,7 +25,7 @@ onMounted(() => {
       trigger: '.content',
       pin: true,
       scrub: true,
-      end: '+=3000',
+      end: '+=10000',
       markers: true
     }
   })
@@ -36,7 +36,7 @@ onMounted(() => {
     gsap.from(text, {
       y: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       ease: ' elastic',
       stagger: 0.1,
       scrollTrigger: {
@@ -44,7 +44,7 @@ onMounted(() => {
         containerAnimation: scrollTween,
         start: '30% center',
         end: 'center center',
-        // scrub: 1,
+        scrub: 1,
         markers: true
       }
     })
