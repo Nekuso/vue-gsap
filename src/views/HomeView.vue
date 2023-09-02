@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { onMounted } from 'vue'
 
 const tl = gsap.timeline()
+
 </script>
 
 <template>
