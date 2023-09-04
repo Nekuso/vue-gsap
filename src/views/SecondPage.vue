@@ -4,9 +4,13 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <main class="w-full h-screen bg-slate-700 flex place-items-center justify-center">
-    <RouterLink :to="{ name: Routes.THIRD }">
-      <h1 class="text-4xl font-black text-white">GO BEYOND</h1>
+  <main class="content w-full h-screen bg-slate-700 flex place-items-center justify-center">
+    <RouterLink
+      :to="{ name: Routes.THIRD }"
+      @click=""
+      class="text-xl font-black button w-auto px-11 py-4 bg-white rounded-full"
+    >
+      GO BEYOND
     </RouterLink>
   </main>
 </template>

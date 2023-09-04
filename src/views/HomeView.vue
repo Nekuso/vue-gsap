@@ -1,16 +1,24 @@
 <script setup lang="ts">
 import gsap from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, onBeforeUnmount } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Routes } from '@/constants/route-names'
 
 const tl = gsap.timeline()
+
+onMounted(() => {
+  tl.to
+})
 </script>
 
 <template>
-  <main class="w-full h-screen bg-blue-700 flex justify-center place-items-center">
-    <RouterLink :to="{ name: Routes.SECOND }">
-      <h1 class="text-4xl font-black text-white">EXPLORE</h1>
+  <main class="content w-full h-screen bg-blue-700 flex justify-center place-items-center">
+    <RouterLink
+      :to="{ name: Routes.SECOND }"
+      @click=""
+      class="text-xl font-black button w-auto px-11 py-4 bg-white rounded-full"
+    >
+      EXPLORE
     </RouterLink>
   </main>
 </template>
