@@ -35,8 +35,33 @@ onMounted(() => {
 
 <template>
   <main class="w-full flex flex-col justify-center place-items-center bg-black">
-    <div class="w-full h-screen"></div>
-    <div class="content w-full h-screen px-36 flex flex-col justify-center place-items-center">
+    <div
+      class="w-full h-screen text-8xl font-black flex flex-column justify-center place-items-center"
+    >
+      <h1 class="text-white">SCROLL DOWN SLOWLY</h1>
+    </div>
+    <div class="content w-full h-screen px-[20rem] flex flex-col justify-center place-items-center">
+      <h1 class="text font-black">
+        TRACKXP<img
+          src="https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif"
+        />
+      </h1>
+      <h1 class="text font-black">
+        ICHIRAKU<img
+          src="https://i.pinimg.com/originals/99/cd/09/99cd0925c516b5d0a740dffd03c3e0df.gif"
+        />
+      </h1>
+      <h1 class="text font-black">
+        HEYMEAL<img
+          src="https://i.pinimg.com/originals/1a/ca/14/1aca1432f8a8f93d4bd0932a8c0a6449.gif"
+        />
+      </h1>
+      <h1 class="text font-black">
+        MARINA TOWN
+        <img src="https://i.pinimg.com/originals/d5/f3/e7/d5f3e7e33f8072785936fe88cd16f502.gif" />
+      </h1>
+    </div>
+    <div class="content w-full h-screen px-[20rem] flex flex-col justify-center place-items-center">
       <h1 class="text font-black">TRACKXP<span>TRY THIS</span></h1>
       <h1 class="text font-black">ICHIRAKU<span>RAMEN STORE</span></h1>
       <h1 class="text font-black">HEYMEAL<span>RECIPES!!</span></h1>
@@ -48,7 +73,7 @@ onMounted(() => {
 
 <style>
 .text {
-  font-size: 10vw;
+  font-size: 8vw;
   letter-spacing: -0.01em;
   line-height: 100%;
   margin: 0;
@@ -85,8 +110,26 @@ span {
   flex-direction: column;
   justify-content: center;
 }
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transform-origin: center;
+  transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .text:hover > span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.text:hover > img {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 </style>
