@@ -15,6 +15,25 @@ function raf(time: any) {
 }
 requestAnimationFrame(raf)
 
+const data = [
+  {
+    title: 'TRACKXP',
+    img: 'https://i.pinimg.com/originals/d5/f3/e7/d5f3e7e33f8072785936fe88cd16f502.gif'
+  },
+  {
+    title: 'ICHIRAKU',
+    img: 'https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif'
+  },
+  {
+    title: 'HEYMEAL',
+    img: 'https://i.pinimg.com/originals/1a/ca/14/1aca1432f8a8f93d4bd0932a8c0a6449.gif'
+  },
+  {
+    title: 'MARINA TOWN',
+    img: 'https://i.pinimg.com/originals/99/cd/09/99cd0925c516b5d0a740dffd03c3e0df.gif'
+  }
+]
+
 onMounted(() => {
   const textElements = gsap.utils.toArray('.text')
 
@@ -41,24 +60,9 @@ onMounted(() => {
       <h1 class="text-white">SCROLL DOWN SLOWLY</h1>
     </div>
     <div class="content w-full h-screen px-[20rem] flex flex-col justify-center place-items-center">
-      <h1 class="text font-black">
-        TRACKXP<img
-          src="https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif"
-        />
-      </h1>
-      <h1 class="text font-black">
-        ICHIRAKU<img
-          src="https://i.pinimg.com/originals/99/cd/09/99cd0925c516b5d0a740dffd03c3e0df.gif"
-        />
-      </h1>
-      <h1 class="text font-black">
-        HEYMEAL<img
-          src="https://i.pinimg.com/originals/1a/ca/14/1aca1432f8a8f93d4bd0932a8c0a6449.gif"
-        />
-      </h1>
-      <h1 class="text font-black">
-        MARINA TOWN
-        <img src="https://i.pinimg.com/originals/d5/f3/e7/d5f3e7e33f8072785936fe88cd16f502.gif" />
+      <h1 v-for="(item, index) in data" :key="index" class="text font-black cursor-pointer">
+        {{ item.title }}
+        <img :src="item.img" />
       </h1>
     </div>
     <div class="content w-full h-screen px-[20rem] flex flex-col justify-center place-items-center">
