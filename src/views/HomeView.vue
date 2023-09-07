@@ -18,19 +18,23 @@ requestAnimationFrame(raf)
 const data = [
   {
     title: 'TRACKXP',
-    img: 'https://i.pinimg.com/originals/d5/f3/e7/d5f3e7e33f8072785936fe88cd16f502.gif'
+    img: 'https://i.pinimg.com/originals/d5/f3/e7/d5f3e7e33f8072785936fe88cd16f502.gif',
+    desc: 'TRY THIS'
   },
   {
     title: 'ICHIRAKU',
-    img: 'https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif'
+    img: 'https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif',
+    desc: 'RAMEN STORE'
   },
   {
     title: 'HEYMEAL',
-    img: 'https://i.pinimg.com/originals/1a/ca/14/1aca1432f8a8f93d4bd0932a8c0a6449.gif'
+    img: 'https://i.pinimg.com/originals/1a/ca/14/1aca1432f8a8f93d4bd0932a8c0a6449.gif',
+    desc: 'RECIPES!!'
   },
   {
     title: 'MARINA TOWN',
-    img: 'https://i.pinimg.com/originals/99/cd/09/99cd0925c516b5d0a740dffd03c3e0df.gif'
+    img: 'https://i.pinimg.com/originals/99/cd/09/99cd0925c516b5d0a740dffd03c3e0df.gif',
+    desc: 'Nothing Fancy'
   }
 ]
 
@@ -66,10 +70,10 @@ onMounted(() => {
       </h1>
     </div>
     <div class="content w-full h-screen px-[20rem] flex flex-col justify-center place-items-center">
-      <h1 class="text font-black">TRACKXP<span>TRY THIS</span></h1>
-      <h1 class="text font-black">ICHIRAKU<span>RAMEN STORE</span></h1>
-      <h1 class="text font-black">HEYMEAL<span>RECIPES!!</span></h1>
-      <h1 class="text font-black">MARINA TOWN <span>Nothing Fancy</span></h1>
+      <h1 v-for="(item, index) in data" :key="index" class="text font-black">
+        {{ item.title }}
+        <span>{{ item.desc }}</span>
+      </h1>
     </div>
     <div class="w-full h-screen"></div>
   </main>
