@@ -3,9 +3,8 @@ import gsap from 'gsap'
 import { onMounted } from 'vue'
 
 const tl = gsap.timeline()
-
 </script>
 
 <template>
-  <main class="w-screen h-screen flex justify-center place-items center place-items-center"></main>
+  <main class="w-full h-screen flex flex-col justify-center place-items-center"></main>
 </template>
