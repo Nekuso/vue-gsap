@@ -16,5 +16,8 @@ const tl = gsap.timeline()
 </script>
 
 <template>
-  <main class="w-full h-screen flex flex-col justify-center place-items-center"></main>
+  <main class="w-full h-screen flex flex-col justify-center place-items-center">
+
+  
+  </main>
 </template>
