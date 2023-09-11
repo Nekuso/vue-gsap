@@ -61,6 +61,10 @@ const tl = gsap.timeline()
           <h1 class="text-8xl font-black">I'M MOVING SHEEESH</h1>
           <span class="text-7xl font-black">⬅️</span>
         </div>
+        <div class="marquee__part flex place-items-center w-fit shrink-0">
+          <h1 class="text-8xl font-black">I'M MOVING SHEEESH</h1>
+          <span class="text-7xl font-black">⬅️</span>
+        </div>
       </div>
     </div>
     <div class="spacer w-full h-screen bg-slate-800"></div>
