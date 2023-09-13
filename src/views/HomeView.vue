@@ -4,7 +4,6 @@ import { onMounted } from 'vue'
 import { Application } from '@splinetool/runtime'
 
 onMounted(() => {
-
   const canvas = document.getElementById('canvas3d')
   const app = new Application(canvas)
   app.load('https://prod.spline.design/sJO5mgflCrP2Mhjo/scene.splinecode')
