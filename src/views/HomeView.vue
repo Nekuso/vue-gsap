@@ -8,9 +8,9 @@ const tl = gsap.timeline()
 onMounted(() => {
   const text = new SplitType('#brand')
   tl.to('.char', {
-    duration: 1,
+    duration: .5,
     y: 0,
-    stagger: 0.1,
+    stagger: 0.05,
     ease:"power4"
   })
 })
